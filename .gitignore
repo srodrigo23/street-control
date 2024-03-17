@@ -1,0 +1,8 @@
+/.venv
+.env
+*.pdf
+*.png
+/__pycache__
+*/__pycache__
+*/*/__pycache__
+/instance/data.db
