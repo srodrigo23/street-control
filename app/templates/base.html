@@ -17,17 +17,26 @@
         <title>App</title>
     {%endif%}
 </head>
-<body>
+<body class="max-h-full">
     <div class="">
-    
-        <nav class="flex place-items-center bg-slate-300 h-20">        
+        <nav class="flex place-items-center shadow-md bg-slate-300 h-20">        
             <ul class="grow">
-                <li class="inline mx-10"><a href="#">Cobros</a></li>
-                <li class="inline mx-10"><a href="#">Asistencia</a></li>
-                <li class="inline mx-10"><a href="#">Reportes</a></li>
+                <li class="inline ml-10">
+                    <a class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        OTB Miraflores
+                    </a>
+                </li>
+                <li class="inline ml-10"><a href="#">Usuarios</a></li>
+                <li class="inline ml-10"><a href="#">Vecinos</a></li>
+                <li class="inline ml-10"><a href="#">Cobros</a></li>
+                <li class="inline ml-10"><a href="#">Reuniones</a></li>
+                <li class="inline ml-10"><a href="#">Asistencia</a></li>
+                <li class="inline ml-10"><a href="#">Reportes</a></li>
+                <li class="inline ml-10"><a href="#">Lecturacion</a></li>
+                <li class="inline ml-10"><a href="#">Egresos</a></li>
             </ul>
             <div class="p-5">
-                <a href="#">Log Out</a>
+                <a href="{{ url_for('main.log_out') }}"">Cerrar Sesión</a>
             </div>
         </nav>
         <div style="height: 100%;">

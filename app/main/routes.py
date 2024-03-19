@@ -1,17 +1,45 @@
 from flask import render_template, current_app, send_from_directory, send_file, redirect, url_for
+from flask import session
+from flask import request
 from app.main import bp
 
 # import os
 
 @bp.route('/')
 def index():
+  if 'username' in session:
   # return redirect(url_for('index'))
-  return render_template('index.html')
+    return render_template('index.html')
+  else:
+    return redirect(url_for('main.show_the_login_form'))
 
-@bp.route('/login')
-def login():
-  # return redirect(url_for('index'))
+# @bp.route('/login', methods=['GET', 'POST'])
+# def login():
+#   if request.method == 'POST':
+#     return do_the_login()
+#   else:
+#     return show_the_login_form()
+
+@bp.get('/login')
+def show_the_login_form():
   return render_template('login.html')
+
+@bp.post('/login')
+def do_the_login():
+  if request.method == "POST":
+    username = request.form.get("username")
+    password = request.form.get("password") 
+    if username == "admin" and password == "admin":
+      session['username'] = username
+      return redirect(url_for('main.index'))
+    else:
+      return render_template('login.html', error=True)
+
+@bp.route('/logout')
+def log_out():
+  # clear session
+  session.pop('username', None)
+  return redirect(url_for('main.show_the_login_form'))
 
 # @bp.route('/qrgenerator')
 # def qr_generator()->None:
