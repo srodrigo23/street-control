@@ -8,6 +8,11 @@ def index():
   # return redirect(url_for('index'))
   return render_template('index.html')
 
+@bp.route('/login')
+def login():
+  # return redirect(url_for('index'))
+  return render_template('login.html')
+
 # @bp.route('/qrgenerator')
 # def qr_generator()->None:
 #     text_for_qr = "this is a text for qr code"

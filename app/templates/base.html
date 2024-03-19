@@ -18,34 +18,30 @@
     {%endif%}
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                
-                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> -->
-                <!--  -->
+    <div class="">
+    
+        <nav class="flex place-items-center bg-slate-300 h-20">        
+            <ul class="grow">
+                <li class="inline mx-10"><a href="#">Cobros</a></li>
+                <li class="inline mx-10"><a href="#">Asistencia</a></li>
+                <li class="inline mx-10"><a href="#">Reportes</a></li>
+            </ul>
+            <div class="p-5">
+                <a href="#">Log Out</a>
             </div>
         </nav>
         <div style="height: 100%;">
-          {% block content %} {% endblock %}
+            {% block content %} {% endblock %}
         </div>        
-        <!-- <div class="fixed-bottom">
-            this is footer
-        </div> -->
         <footer class="container fixed-bottom bg-body-tertiary text-center text-lg-start">
-            <!-- Copyright -->
-            <!-- style="background-color: rgba(0, 0, 0, 0.05);" -->
             <div class="text-center p-3" >
               © 2024 Copyright:
               <a class="text-body" href="https://github.com/srodrigo23">Sergio Rodrigo</a>
             </div>
-            <!-- Copyright -->
         </footer>
     </div>
     {% block javascript %}
-        <!-- <script src="{{ url_for('static',filename='js/index.js') }}"></script> -->
+        <script src="{{ url_for('static',filename='js/index.js') }}"></script>
     {% endblock %}
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
