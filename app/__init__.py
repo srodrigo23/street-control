@@ -24,13 +24,10 @@ def create_app():
         #Register blueprints here
         from app.main import bp as main_bp
         app.register_blueprint(blueprint=main_bp)
-        person.insert_user("")
 
-        # from app.certificates import bp as certificates_bp
-        # app.register_blueprint(blueprint=certificates_bp, url_prefix="/certificates")
         
-        # from app.users import bp as users_bp
-        # app.register_blueprint(blueprint=users_bp, url_prefix="/users")
+        from app.users import bp as users_bp
+        app.register_blueprint(blueprint=users_bp, url_prefix="/users")
 
         # from app.courses import bp as courses_bp
         # app.register_blueprint(blueprint=courses_bp, url_prefix="/courses")
