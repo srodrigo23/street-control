@@ -8,8 +8,11 @@ from app.main import bp
 @bp.route('/')
 def index():
   if 'username' in session:
-  # return redirect(url_for('index'))
-    return render_template('index.html')
+    # messages = request.args['messages']
+    if 'is_admin' in session:
+      return render_template('index.html', is_admin=True)
+    else:
+      return render_template('index.html')
   else:
     return redirect(url_for('main.show_the_login_form'))
 
@@ -28,10 +31,12 @@ def show_the_login_form():
 def do_the_login():
   if request.method == "POST":
     username = request.form.get("username")
-    password = request.form.get("password") 
+    password = request.form.get("password")
     if username == "admin" and password == "admin":
       session['username'] = username
-      return redirect(url_for('main.index'))
+      session['is_admin'] = True
+      # return redirect(url_for('main.index'))
+      return redirect(url_for('.index'))
     else:
       return render_template('login.html', error=True)
 

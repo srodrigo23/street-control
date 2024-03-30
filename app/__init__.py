@@ -22,15 +22,17 @@ def create_app():
         migrate.init_app(app, db)
         
         #Register blueprints here
-        from app.main import bp as main_bp
-        app.register_blueprint(blueprint=main_bp)
+    from app.main import bp as main_bp
+    app.register_blueprint(blueprint=main_bp)
+    
+    from app.users import bp as users_bp
+    app.register_blueprint(blueprint=users_bp, url_prefix="/users")
 
-        
-        from app.users import bp as users_bp
-        app.register_blueprint(blueprint=users_bp, url_prefix="/users")
+    from app.meetings import bp as meetings_bp
+    app.register_blueprint(blueprint=meetings_bp, url_prefix="/meetings")
 
-        # from app.courses import bp as courses_bp
-        # app.register_blueprint(blueprint=courses_bp, url_prefix="/courses")
+    from app.attendance import bp as attendance_bp
+    app.register_blueprint(blueprint=attendance_bp, url_prefix="/attendance")
         
         # @app.route('/favicon.ico')
         # def favicon():
@@ -44,4 +46,4 @@ def create_app():
         # def test_page():
         #   return '<h1>Testing the Flask Application Factory Pattern</h1>'
         
-        return app
+    return app

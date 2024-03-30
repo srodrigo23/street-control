@@ -27,13 +27,15 @@
                         OTB Miraflores
                     </a>
                 </li>
-                <li class="inline ml-10"><a href="{{ url_for('users.index') }}">Usuarios</a></li>
+                <li class="inline ml-10"><a href="{{ url_for('meetings.index') }}">Reuniones</a></li>
+                <li class="inline ml-10"><a href="{{ url_for('attendance.index') }}">Asistencia</a></li>
                 <li class="inline ml-10"><a href="#">Vecinos</a></li>
+                {% if is_admin %}
+                    <li class="inline ml-10"><a href="{{ url_for('users.index') }}">Usuarios</a></li>
+                {% endif%}
                 <li class="inline ml-10"><a href="#">Cobros</a></li>
-                <li class="inline ml-10"><a href="#">Reuniones</a></li>
-                <li class="inline ml-10"><a href="#">Asistencia</a></li>
                 <li class="inline ml-10"><a href="#">Reportes</a></li>
-                <li class="inline ml-10"><a href="#">Lecturacion</a></li>
+                <li class="inline ml-10"><a href="#">Lecturación</a></li>
                 <li class="inline ml-10"><a href="#">Egresos</a></li>
             </ul>
             <div class="p-5">
