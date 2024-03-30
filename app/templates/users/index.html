@@ -13,7 +13,47 @@
           </svg>
           Nuevo Usuario
         </button>
-      </a>      
+      </a>
+
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    Nombre Completo
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Nombre de Usuario
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Ultima conexión
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Estado
+                  </th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for item in data %}
+                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{item['name']}}
+                  </th>
+                  <td class="px-6 py-4">
+                    {{item['user_name']}}
+                  </td>
+                  <td class="px-6 py-4">
+                    {{item['last_connection']}}
+                  </td>
+                  <td class="px-6 py-4">
+                      <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                  </td>
+                </tr> 
+              {% endfor %}
+            </tbody>
+        </table>
+      </div>
+    
       <!-- <button type="button" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
           <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
           <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
