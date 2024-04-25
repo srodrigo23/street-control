@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 <div>
-  <h2 class="text-2xl"> Usuarios </h2>
+  <!-- <h2 class="text-2xl"> Usuarios </h2> -->
   <div class="flex-column">
     <!-- <h1 class="text-center">Center aligned text on all viewport sizes.</h1> -->
     <div class="d-flex justify-content-center m-5">
-              
-      <a href="#ex1" rel="modal:open">
-        <button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 me-2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
-          </svg>
-          Nuevo Usuario
-        </button>
-      </a>
-
+      
+      <div class="flex justify-center pb-5 pt-5">
+        <a href="#ex1" rel="modal:open">
+          <button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 me-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+            </svg>
+            Nuevo Usuario
+          </button>
+        </a>
+      </div>
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -53,79 +54,79 @@
             </tbody>
         </table>
       </div>
-    
-      <!-- <button type="button" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
-          <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
-          <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
-          </svg>
-          Sign in with Facebook
-      </button> -->
     </div>
   </div>
 </div>
 
 <div id="ex1" class="modal">
     <form class="space-y-4 md:space-y-6" action="{{ url_for('users.index')}}" method="post">
-      <div class="modal-header">
+      <div class="modal-header mt-3 text-center">
         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
           Nuevo Usuario
         </h1>
       </div>
       <div class="modal-body">
-        <div class="block mb-2">
-          <!-- <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido Paterno</label> -->
-          <input type="text" name="username" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Apellido Paterno" required="">
+        <div class="block mb-3">
+          <label for="username" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Apellido Paterno</label>
+          <!-- placeholder="Apellido Paterno" -->
+          <input type="text" name="username" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
         </div>
 
-        <div class="block mb-2">
-          <!-- <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido Materno</label> -->
-          <input type="text" name="username" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Apellido Materno" required="">
+        <div class="block mb-3">
+          <label for="username" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Apellido Materno</label>
+          <input type="text" name="username" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
         </div>
 
-        <div>
-          <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Primer Nombre</label>
+        <div class="block mb-3">
+          <label for="username" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Primer Nombre</label>
           <input type="text" name="username" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
         </div>
-
-        <div>
-          <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Segundo Nombre</label>
+        <div class="block mb-3">
+          <label for="username" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Segundo Nombre</label>
           <input type="text" name="username" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
         </div>
-<!--         
-        <div class="mb-3">
-            <label for="inputfirstName" class="form-label">Primer Nombre</label>
-            <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp">
+        <div class="block mb-3">
+          <label for="username" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Cédula de identidad</label>
+          <input type="text" name="userdata" id="ci" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
         </div>
-        <div class="mb-3">
-            <label for="inputsecondName" class="form-label">Segundo Nombre</label>
-            <input type="text" class="form-control" id="secondName" aria-describedby="secondNameHelp">
+        <div class="flex justify-center pb-2 pt-3">
+          <div class="flex items-center me-4">
+            <input checked id="inline-radio" type="radio" value="" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="inline-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Vecino</label>
+          </div>
+          <div class="flex items-center me-4">
+            <input id="inline-2-radio" type="radio" value="" name="inline-radio-group" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="inline-2-radio" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Usuario</label>
+          </div>
         </div>
-        <div class="mb-3">
-            <label for="inputCellPhone" class="form-label">Número de Celular</label>
-            <input type="text" class="form-control" id="cellPhone" aria-describedby="cellPhoneHelp">
-        </div> -->
-        <!-- <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div> -->
-        <!-- <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div> -->
-      </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Guardar</button>
-      </div>
-      <!-- <div>
-        <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre de Usuario</label>
-        <input type="text" name="username" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nombre.apellido" required="">
-      </div>
-      <div>
-        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
-        <input type="password" name="password" id="password" placeholder="•••••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
-      </div> -->
+        <div class="border border-gray-200 rounded-lg p-5 mb-3">
+          <div class="mb-3">
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre de Usuario</label>
+            <input type="text" id="user_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nombre para ingresar al sistema" required />
+          </div>
+          <div>
+            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+            <input type="password" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Password" required />
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 me-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+            </svg>
+            Registrar
+          </button>
+          <a rel="modal:close">
+            <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 me-2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>                          
+              Cancelar
+            </button>
+          </a>
+          
+        </div>
     </form>
-  <a href="#" rel="modal:close">Close</a>
+  <!-- <a href="#" rel="modal:close">Close</a> -->
 </div>
 {% endblock %}
