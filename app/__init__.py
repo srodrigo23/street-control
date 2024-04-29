@@ -5,8 +5,10 @@ from config import config
 
 import os
 
-from app.models import user
-from app.queries import person
+from app.models import person, session, user_credentials
+
+# from app.queries import person
+
 
 def create_app():
     

@@ -7,3 +7,4 @@
 */*/__pycache__
 /instance/data.db
 /node_modules
+/migrations
