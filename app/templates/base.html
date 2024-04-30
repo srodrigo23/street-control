@@ -40,13 +40,7 @@
         </nav>
         <div style="height: 100%;">
             {% block content %} {% endblock %}
-        </div>        
-        <footer class="container fixed-bottom bg-body-tertiary text-center text-lg-start">
-            <div class="text-center p-3" >
-              © 2024 Copyright:
-              <a class="text-body" href="https://github.com/srodrigo23">Sergio Rodrigo</a>
-            </div>
-        </footer>
+        </div>
     </div>
     {% block javascript %}
         <script src="{{ url_for('static',filename='js/index.js') }}"></script>
@@ -54,6 +48,14 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-
+    
+    <link href="https://cdn.datatables.net/v/dt/dt-2.0.5/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/dt/dt-2.0.5/datatables.min.js"></script>
 </body>
+<footer class="container fixed-bottom bg-body-tertiary text-center text-lg-start">
+    <div class="text-center p-3" >
+      © 2024 Copyright:
+      <a class="text-body" href="https://github.com/srodrigo23">Sergio Rodrigo</a>
+    </div>
+</footer>
 </html>
