@@ -35,6 +35,9 @@ def create_app():
 
     from app.attendance import bp as attendance_bp
     app.register_blueprint(blueprint=attendance_bp, url_prefix="/attendance")
+    
+    from app.collections import bp as collection_bp
+    app.register_blueprint(blueprint=collection_bp, url_prefix="/collections")
         
         # @app.route('/favicon.ico')
         # def favicon():
