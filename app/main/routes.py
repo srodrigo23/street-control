@@ -30,15 +30,23 @@ def show_the_login_form():
 @bp.post('/login')
 def do_the_login():
   if request.method == "POST":
-    username = request.form.get("username")
-    password = request.form.get("password")
+    data = request.get_json()
+    username = data['username']
+    password = data['password']
+    # print(username, password)
+    # username = request.form.g
+    # et("username")
+    # password = request.form.get("password")
     if username == "admin" and password == "admin":
       session['username'] = username
       session['is_admin'] = True
+
+      return {'status': 'success'}#username, password
       # return redirect(url_for('main.index'))
-      return redirect(url_for('.index'))
+      # return redirect(url_for('.index'))
     else:
-      return render_template('login.html', error=True)
+      return '<h1>wrong</h1>'
+      # return render_template('login.html', error=True)
 
 @bp.route('/logout')
 def log_out():

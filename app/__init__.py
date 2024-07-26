@@ -1,4 +1,5 @@
 from flask import Flask, url_for, send_from_directory
+from flask_cors import CORS
 from app.extensions import db
 from app.extensions import migrate
 from config import config
@@ -13,6 +14,7 @@ from app.models import person, session, user_credentials
 def create_app():
     
     app = Flask(__name__)
+    CORS(app)
     app.config.from_object(config[os.environ.get("CONFIG_MODE")])
     
     # Initialize Flask extensions here
