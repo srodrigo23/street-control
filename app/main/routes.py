@@ -33,9 +33,7 @@ def do_the_login():
     data = request.get_json()
     username = data['username']
     password = data['password']
-    # print(username, password)
-    # username = request.form.g
-    # et("username")
+    # username = request.form.get("username")
     # password = request.form.get("password")
     if username == "admin" and password == "admin":
       session['username'] = username
